@@ -132,5 +132,5 @@ func TestSetOutOfBounds(t *testing.T) {
 			t.Errorf("expected panic on Set out of bounds")
 		}
 	}()
-	c.Set(2, 10)
+	c = c.Set(2, 10)
 }

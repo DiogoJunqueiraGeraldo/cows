@@ -61,6 +61,7 @@ func (c *Cows[T]) Set(i int, v T) *Cows[T] {
 	defer c.m.Unlock()
 
 	if c.arc.Load() > 1 {
+		c.arc.Add(-1)
 		nCow := c.copy()
 		nCow.bArr[i] = v
 		return nCow
